@@ -1,0 +1,43 @@
+### Packet Sniffer - Network Analyzer
+
+This **Packet Sniffer** tool scans a specified network, collects device information, and generates a detailed report in JSON format. It uses ARP (Address Resolution Protocol) for discovering devices within the network and gathers useful data such as:
+
+- **IP Address**
+- **MAC Address**
+- **Device Name** (via reverse DNS lookup)
+- **Operating System** (basic detection via platform info)
+- **Sensitive Data** (simulated)
+- **Last Visited Websites** (mocked for demonstration)
+- **Open Ports & Vulnerabilities** (sample vulnerabilities)
+- **Bandwidth Usage** (mock data)
+
+### Key Features:
+1. **Network Scanning**: Automatically detects all devices on a specified IP range using ARP requests.
+2. **Device Information**: Retrieves each device's IP, MAC, and device name. It also tries to detect the OS using platform-based functions.
+3. **Sensitive Data & Vulnerabilities**: This includes mock sensitive data (usernames, passwords) and vulnerabilities like outdated firmware or open ports.
+4. **Device & Network Info**: Offers insights into open ports, bandwidth usage, and potential vulnerabilities.
+5. **JSON Report**: The generated report is structured in JSON format, which is easily accessible for further analysis.
+
+### How It Works:
+1. The script scans the network range `192.168.0.0/24` (or another specified range).
+2. It retrieves the IP, MAC, and device details for each live device found within the network.
+3. It also simulates sensitive data capture (like passwords and email addresses), open ports, and vulnerabilities.
+4. Finally, it generates a **JSON report** that can be saved and reviewed.
+
+### Requirements:
+- Python 3.x
+- `scapy` library: For packet sniffing and ARP requests.
+- `socket` and `platform`: For retrieving network and OS information.
+
+### How to Use:
+1. Ensure you have the necessary Python libraries installed:
+   ```bash
+   pip install scapy
+   ```
+2. Run the script:
+   ```bash
+   python packet_sniffer.py
+   ```
+3. The generated **JSON report** will include all the collected information for analysis. 
+
+This tool can be used for simple network analysis, penetration testing (on your network), and educational purposes to understand network traffic. For real-world applications, you may need to refine the data collection and add proper security checks.
